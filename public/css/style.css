@@ -2,13 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
+    /* font-family: 'Courier New', Courier, monospace; */
 }
 
 body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    /* font-family: 'Courier New', Courier, monospace; */
 
 }
 

@@ -59,36 +59,25 @@
             weekday[5] = "Friday";
             weekday[6] = "Saturday";
 
-            let currentTime = new Date();
-            days = weekday[currentTime.getDay()];
+            let idate = new Date();
+            days = weekday[idate.getDay()];
             let day = document.getElementById('day');
             day.innerText = days;
 
-
-
         };
-
         getCurrentDay();
 
-    </script>
 
-
-
-
-    <script>
-        const date = new Date();
         function updateClock() {
-
-
+            const date = new Date();
             const hours = String(date.getHours()).padStart(2, '0');
             const minutes = String(date.getMinutes()).padStart(2, '0');
             const seconds = String(date.getSeconds()).padStart(2, '0');
             const clockDisplay = `${hours}:${minutes}:${seconds}`;
-            document.getElementById('today_date').innerText = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}      ${clockDisplay}`;
-        }
+            document.getElementById('today_date').innerText = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}  ${clockDisplay}`;
+        };
         setInterval(updateClock, 1000);
         updateClock();
     </script>
-
 </body>
 </html>
