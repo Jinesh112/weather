@@ -21,6 +21,17 @@ const getInfo = async (event) => {
             const arrData = [data];
             temp_real_val.innerText = arrData[0].main.temp;
             city_name.innerText = `${arrData[0].name},${arrData[0].sys.country}`;
+            const tempMood = arrData[0].weather[0].main;
+            if (tempMood == "Clear") {
+                temp_status.innerHTML = " <p class='clear' style='color:orangered';>☀</p>";
+            } else if (tempMood == "Clouds") {
+                temp_status.innerHTML = " <p class='clouds' style='color:skyblue';>☁</p>";
+            } else if (tempMood == "Rain") {
+                temp_status.innerHTML = " <p class='rain' style='color:skyblue';>🌧</p>";
+            } else {
+                temp_status.innerHTML = " <p class='normal' style='color:skyblue';>❄</p>";
+            }
+
         } catch {
             city_name.innerText = `plese enter the correct city name`;
         }
@@ -33,3 +44,5 @@ submitbtn.addEventListener('click', getInfo);
 // in if condition we check if user not write city name
 // else part (try)we fetch api and display temp,city,country
 // else(catch) user not write city name
+
+
